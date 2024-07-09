@@ -3,14 +3,15 @@ import React from 'react'
 export default function Login() {
   return (
    <>
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+   <div className='flex w-full'>
+   <div className="flex min-h-full flex-1 flex-col justify-start lg:px-8 ml-40 mt-20">
+        <div className=" sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-6  sm:max-w-sm">
           <form action="#" method="POST" className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -23,7 +24,7 @@ export default function Login() {
                   type="email"
                   required
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -46,9 +47,13 @@ export default function Login() {
                   type="password"
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 sm:text-sm sm:leading-6"
                 />
               </div>
+              <div class="flex items-center mt-3">
+              <input id="default-checkbox" type="checkbox"/>
+              <label for="default-checkbox" class="ms-3 text-sm font-medium text-gray-500">Remember me</label>
+              </div>  
             </div>
 
             <div>
@@ -58,9 +63,14 @@ export default function Login() {
                 Sign in
               </button>
             </div>
+            <div>
+              <p className='flex w-full justify-center'>New Here?   <span className='text-blue-500 ml-1'>   Sign Up</span> </p>
+            </div>
           </form>
         </div>
       </div>
-   </>
+
+   </div>
+       </>
   )
 }
