@@ -1,6 +1,23 @@
 import React from 'react'
+import { useState } from 'react';
 
 export default function Login() {
+  
+  const [formData,setFormData] = useState({
+    email: '',
+    password: ''
+  })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted",formData);
+  }
+
+  const handleChange = (e) => {
+    
+    const {name,value} = e.target;
+    setFormData({...formData,[name]:value});
+  }
+
   return (
    <>
    <div className='flex w-full'>
@@ -12,7 +29,7 @@ export default function Login() {
         </div>
 
         <div className="mt-6  sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form action="#" method="POST" className="space-y-6 on " onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
@@ -25,6 +42,8 @@ export default function Login() {
                   required
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -48,6 +67,8 @@ export default function Login() {
                   required
                   autoComplete="current-password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 sm:text-sm sm:leading-6"
+                  value={formData.password}
+                  onChange={handleChange}
                 />
               </div>
               <div class="flex items-center mt-3">
