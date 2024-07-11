@@ -1,14 +1,15 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
 import Nav from './Nav';
-function Destination() {
+
+function TravelPackage() {
     const [hotels,setHotels] = useState([]);
     const [loading,setLoading] = useState(true);
     const [error,setError] = useState(null);
     useEffect(() => {
     const fetchHotels = async () => {
         try {
-            const response = await fetch('http://localhost:3000/destination');
+            const response = await fetch('http://localhost:3000/travelPackages');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -29,15 +30,15 @@ function Destination() {
         return <p>Error: {error}</p>;
     }
   
-    return (
+  return (
     <div>
-            <Nav />
-      <h1>Destination</h1>
+        <Nav />
+      <h1>Travel Packages </h1>
             <ul>
                 {hotels.map(hotel => (
                     <li key={hotel.id}>
-                        <p>Title: {hotel.title}</p>
-                        <p>Weather: {hotel.weather}</p>
+                        <p>Name: {hotel.name}</p>
+                        <p>Price: {hotel.price}</p>
                         <img src={hotel.img} alt={hotel.name} style={{width:'500px', height:'300px'}} />
                         <p>{hotel.desc}</p>
                         </li>
@@ -47,4 +48,4 @@ function Destination() {
   )
 }
 
-export default Destination
+export default TravelPackage

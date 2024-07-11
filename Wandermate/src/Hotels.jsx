@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
+import Nav from './Nav';
 
 function Hotels() {
     const [hotels,setHotels] = useState([]);
@@ -30,6 +31,7 @@ function Hotels() {
     }
     return (
         <div>
+            <Nav />
             <h1>Hotels</h1>
             <ul>
                 {hotels.map(hotel => (
