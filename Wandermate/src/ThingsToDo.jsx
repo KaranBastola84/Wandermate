@@ -4,8 +4,8 @@ import Nav from './Nav';
 
 function ThingsToDo() {
 const [hotels,setHotels] = useState([]);
-const [loading,setLoading] = useEffect(true);
-const [error,setError] = useEffect(null);
+const [loading,setLoading] = useState(true);
+const [error,setError] = useState(null);
 useEffect(() => {
 const fetchHotels = async () => {
     try{
@@ -21,12 +21,11 @@ const fetchHotels = async () => {
         setLoading(false);
     }
 };
-fetchHotel();
+fetchHotels();
 },[]);
 if(loading){
     return <p>Loading...</p>
 }
-
 if(error){
     return <p>Error: {error}</p>
 }
@@ -37,8 +36,8 @@ if(error){
       <ul>
         {hotels.map(hotel => (
             <li key={hotel.id}>
-                <h2></h2>
-
+                <h2>ID : {hotel.id}</h2>
+                <p>{hotel.desc}</p>
 
             </li>
         ))}

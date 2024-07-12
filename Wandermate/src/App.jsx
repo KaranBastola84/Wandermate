@@ -8,12 +8,14 @@ import Hotels from "./Hotels";
 import Destination from "./Destination";
 import TravelPackage from "./TravelPackage";
 import ThingsToDo from "./ThingsToDo";
+import WelcomePage from "./WelcomePage";
+import ImageSlider from "./ImageSlider";
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Routes>
         <Route path="/" element={<SetupPage />} />
         <Route path="/SignUpp" element={<Login />} />
@@ -24,7 +26,10 @@ function App() {
         <Route path="/ThingsToDo" element={<ThingsToDo />}></Route>
       </Routes>
       
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <ImageSlider />
+
+      
     </>
   )
 }

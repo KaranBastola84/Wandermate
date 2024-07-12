@@ -15,7 +15,7 @@ function SetupPage() {
       >
         <div className=" flex flex-row-reverse gap-96 ">
           <Nav />
-          {/* <img src={backgroundImage2} alt="Logo"  className="sm:px-2 p-48 h-screen"/> */}
+         
           <h1>
             <span className="text-yellow-600 ps-8 text-3xl font-bold justify-start items-start">
               Explore.
