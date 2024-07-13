@@ -8,9 +8,9 @@ import Hotels from "./Hotels";
 import Destination from "./Destination";
 import TravelPackage from "./TravelPackage";
 import ThingsToDo from "./ThingsToDo";
-import WelcomePage from "./WelcomePage";
 import ImageSlider from "./ImageSlider";
-
+import Landing from "./Landing";
+import Footer from "./Footer";
 function App() {
 
   return (
@@ -26,8 +26,10 @@ function App() {
         <Route path="/ThingsToDo" element={<ThingsToDo />}></Route>
       </Routes>
       
-      </BrowserRouter> */}
-      <ImageSlider />
+      </BrowserRouter>  */}
+      {/* <ImageSlider /> */}
+      <Landing />
+      
 
       
     </>
