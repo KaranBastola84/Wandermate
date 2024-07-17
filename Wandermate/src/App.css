@@ -1,33 +1,37 @@
-.slider{
-    padding-top: 90px;
-    position: relative;
-    width: max-content;
-    margin: auto;
-    overflow: hidden;
-}
-.slider img{
-    width: 1050px;
-    height: 500px;
-    display: none;
-}
-img.displaySlide{
-    display: block;
-    animation-duration: 1ms;
-}
-.slider button{
-    position: absolute;
-    top: 350px;
-    transform: translateY(-50%);
-    font-size: 40px;
-    padding: 1px 5px;
-    background-color: hsla(0, 0%, 0%, 0%);
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.prev{
-    left: 0;
-}
-.next{
-    right: 0;
-}
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    padding-left: 0; /* Ensure no extra padding is added */
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 1.25rem; /* Assuming gap-5 is equivalent to 1.25rem in Tailwind */
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .mr-2 {
+    margin-right: 0.5rem; /* Assuming mr-2 is equivalent to 0.5rem in Tailwind */
+  }
+  
+  .cart-photos {
+    display: flex;
+    gap: 1rem; /* Adjust the gap between photos as needed */
+     /* Add some space above the photos */
+  }
+  
+  .cart-photo {
+    width: 300px; /* Set the desired width for the cart photos */
+    height: 300px; /* Set the desired height for the cart photos */
+    object-fit: cover; /* Ensure the photo covers the area without distortion */
+    border-radius: 8px; /* Optional: Add some border-radius to make the corners rounded */
+  }
+  
+

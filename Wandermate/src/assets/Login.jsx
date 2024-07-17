@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import Nav from '../Nav';
+import spider2 from "./spider.png"
 
 export default function Login() {
   
@@ -22,8 +23,10 @@ export default function Login() {
   return (
    <>
 
+     
  <Nav />
-   <div className='flex w-full'>
+
+   <div className='flex w-full  flex-row'>
    <div className="flex min-h-full flex-1 flex-col justify-start lg:px-8 ml-40 mt-20">
         <div className=" sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -94,7 +97,11 @@ export default function Login() {
         </div>
       </div>
 
+   <div class="haha" className="pl-10" >
+      <img src={spider2} alt="" className='h-5/6'/>
+      </div>
    </div>
+
        </>
   )
 }

@@ -1,9 +1,5 @@
 import React from "react";
 import backgroundImage from "./assets/Hehe.jpg";
-import backgroundImage2 from "./assets/IMG_1605.jpeg";
-import { Link } from "react-router-dom";
-import Login from "./assets/Login";
-import SignUpp from "./SignUpp";
 import Nav from "./Nav";
 
 function SetupPage() {

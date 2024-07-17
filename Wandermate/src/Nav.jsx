@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Nav() {
   return (
     <>
-     <nav className=" justify-center flex gap-10 pr-8 h-3 flex-wrap">
+     <nav className=" justify-center flex gap-8 pr-8 h-3 flex-wrap">
         
             <ol>
             <Link to="/"> Home </Link>
@@ -26,6 +26,9 @@ function Nav() {
             </ol>
             <ol>
             <Link to="/ThingsToDo">Things To Do</Link>
+            </ol>
+            <ol>
+              <Link to="/Landing"> Landing </Link>
             </ol>
             
           </nav>

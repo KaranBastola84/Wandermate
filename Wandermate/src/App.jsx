@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<SetupPage />} />
         <Route path="/SignUpp" element={<Login />} />
@@ -24,12 +24,14 @@ function App() {
         <Route path="/Destination" element={<Destination />} />
         <Route path="/TravelPackage" element={<TravelPackage />}></Route>
         <Route path="/ThingsToDo" element={<ThingsToDo />}></Route>
+        <Route path="/ImageSlider" element={<ImageSlider />} />
+        <Route path="/Landing" element={<Landing />} />
       </Routes>
       
-      </BrowserRouter>  */}
+      </BrowserRouter> 
+      {/* <SetupPage/> */}
       {/* <ImageSlider /> */}
-      <Landing />
-      
+      {/*  <Landing />  */}
 
       
     </>

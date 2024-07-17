@@ -36,7 +36,7 @@ function Hotels() {
             <ul>
                 {hotels.map(hotel => (
                     <li key={hotel.id}>
-                        <h2>Name:{hotel.id}</h2>
+                        <h2>Name: {hotel.id}</h2>
                         <p>Price: {hotel.price}</p>
                         <p>Rating: {hotel.rating}</p>
                         <img src={hotel.img} alt={hotel.name} style={{width:'500px', height:'300px'}} />

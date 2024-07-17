@@ -3,8 +3,8 @@ import React from 'react';
 function Footer() {
   return (
     <>
-      <div className="flex items-center justify-center">
-        <div className="w-3/4 h-64 p-2 mb-5 bg-white shadow-2xl">
+      <div className="flex items-center justify-center shadow-xl">
+        <div className="w-3/4 h-64 p-2 mb-5 bg-white shadow-xl pl-14 pr-14">
           <div className=" flex justify-between">
             <div>
               <h3 className="text-sm font-semibold text-gray-900">About Wandermate</h3>
