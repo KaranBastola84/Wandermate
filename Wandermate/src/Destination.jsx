@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import user from "./assets/userProfile.jpg";
 import ImageSlider from "./ImageSlider";
-import Nav from "./Nav"
 import Footer from "./Footer";
 import { useState } from "react";
+import HomeNav from "./HomeNav";
+import haha from './assets/userProfile.jpg'
 
 function Destination() {
   const [hotel,setHotels] = useState([]);
@@ -37,29 +37,22 @@ if(error){
 
   return (
     <>
-      <div className="flex gap-80 ">
-        <div className="w-28 h-16">
-          <h1 className="text-blue-500 font-bold text-center p-4">
-            Wandermate
-          </h1>
-        </div>
-        <div className=" h-16 text-center">
-          <nav className="flex-row flex text-center gap-16 p-4 font-bold">
-            <ol>Home</ol>
-            <ol>Destination</ol>
-            <ol>TravelPackage</ol>
-            <ol>Hotels</ol>
-          </nav>
-        </div>
-        <div className=" h-12 w-28 flex items-center justify-center ">
-          <img
-            src={user}
-            alt=""
-            className="h-full  rounded-full object-cover"
-          />
-        </div>
+      <div className=" h-16">
+      <HomeNav />
       </div>
+      <div className="mt-10 ">
       <ImageSlider />
+      </div>
+
+
+
+      <div className="topd">
+        <div className="flex pl-14 pt-6">
+        <img src={haha} className="w-12 h-12 rounded-full" />
+        <button className="pl-2 font-bold">Top Hotels</button>
+        </div>
+      </div>    
+
       <div className="bg">
         <div className=" pr-8 pl-8">
           <div className="p-6">
@@ -94,6 +87,98 @@ if(error){
           </div>
         </div>
       </div>
+
+      <div className="topd">
+        <div className="flex pl-14 pt-6">
+        <img src={haha} className="w-12 h-12 rounded-full" />
+        <button className="pl-2 font-bold">Top Travel Packages</button>
+        </div>
+      </div>    
+
+      <div className="bg">
+        <div className=" pr-8 pl-8">
+          <div className="p-6">
+            <div className="grid grid-cols-2 gap-4">
+              {hotel.slice(0, 4).map((hotel) => (
+                <div
+                  className=" relative"
+                  key={hotel.id}
+                >
+                  <img
+                    className="rounded-2xl"
+                    src={hotel.img}
+                    alt={hotel.name}
+                    style={{ width: "680px", height: "400px" }}
+                  ></img>
+                  <div className="w-full flex justify-center items-center absolute bottom-0 right-0 left-0 backdrop-blur-lg h-[55px] rounded-b-2xl"></div>
+                  <div className="absolute bottom-0 flex p-4 w-full justify-between z-10">
+                    <h2 className="text-medium text-white  font-bold ">
+                      Name: {hotel.name}
+                    </h2>
+                    <p className="text-medium text-white font-bold ">
+                      {hotel.price} $
+                    </p>
+                  </div>
+                  <img
+                    className="w-7 h-7 cursor-pointer absolute top-2 left-2 drop-shadow-lg"
+                    src="https://cdn-icons-png.flaticon.com/128/4436/4436444.png"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div className="topd">
+        <div className="flex pl-14 pt-6">
+        <img src={haha} className="w-12 h-12 rounded-full" />
+        <button className="pl-2 font-bold">Things To Do</button>
+        </div>
+      </div>    
+
+      <div className="bg">
+        <div className=" pr-8 pl-8">
+          <div className="p-6">
+            <div className="grid grid-cols-2 gap-4">
+              {hotel.slice(0, 4).map((hotel) => (
+                <div
+                  className=" relative"
+                  key={hotel.id}
+                >
+                  <img
+                    className="rounded-2xl"
+                    src={hotel.img}
+                    alt={hotel.name}
+                    style={{ width: "680px", height: "400px" }}
+                  ></img>
+                  <div className="w-full flex justify-center items-center absolute bottom-0 right-0 left-0 backdrop-blur-lg h-[55px] rounded-b-2xl"></div>
+                  <div className="absolute bottom-0 flex p-4 w-full justify-between z-10">
+                    <h2 className="text-medium text-white  font-bold ">
+                      Name: {hotel.name}
+                    </h2>
+                    <p className="text-medium text-white font-bold ">
+                      {hotel.price} $
+                    </p>
+                  </div>
+                  <img
+                    className="w-7 h-7 cursor-pointer absolute top-2 left-2 drop-shadow-lg"
+                    src="https://cdn-icons-png.flaticon.com/128/4436/4436444.png"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+
+
 
       <Footer />
     </>

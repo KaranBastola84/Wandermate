@@ -1,21 +1,22 @@
-import Solukhumbu from "../assets/solukhumbuXmt.jpg";
-import Boudha from "../assets/headerImg2.jpg";
-import Lumbini from "../assets/lumbini.jpg";
-import Dharan from "../assets/Dharan.jpg";
-import Pokhara from "../assets/pokhara.jpg";
-import Chitwan from "../assets/Chitwan.jpg";
-import Hotel1 from "../assets/hotel1.jpg";
-import Hotel2 from "../assets/hotel2.jpg";
-import Hotel3 from "../assets/hotel.jpg";
-import Hotel4 from "../assets/hotel4.jpg";
-import spa from "../assets/Spa2.jpg";
-import gym from "../assets/Gym.jpg";
-import tennis from "../assets/Tennis3.jpg";
-import swimming from "../assets/Swimming5.jpg";
-import dest1 from "../assets/bg2.jpg";
-import dest2 from "../assets/bg7.jpg";
-import dest3 from "../assets/img8.jpg";
-import dest4 from "../assets/img9.jpg";
+import Solukhumbu from "./assets/solukhumbuXmt.jpg";
+import Boudha from "./assets/headerImg2.jpg";
+import Lumbini from "./assets/lumbini.jpg";
+import Dharan from "./assets/Dharan.jpg";
+import Pokhara from "./assets/pokhara.jpg";
+import Chitwan from "./assets/Chitwan.jpg";
+import Hotel1 from "./assets/hotel1.jpg";
+import Hotel2 from "./assets/hotel2.jpg";
+import Hotel3 from "./assets/hotel.jpg";
+import Hotel4 from "./assets/hotel4.jpg";
+import spa from "./assets/Spa2.jpg";
+import gym from "./assets/Gym.jpg";
+import tennis from "./assets/Tennis3.jpg";
+import swimming from "./assets/Swimming5.jpg";
+import dest1 from "./assets/bg2.jpg";
+import dest2 from "./assets/bg7.jpg";
+import dest3 from "./assets/img8.jpg";
+import dest4 from "./assets/img9.jpg";
+
 
 export const landingFooterLinks = [
   {
@@ -77,19 +78,19 @@ export const landingHeaderLinks = [
 export const headerLinks = [
   {
     linkTitle: "Home",
-    link: "/user/home",
+    link: "/Home",
   },
   {
     linkTitle: "Destination",
-    link: "/user/destination",
-  },
-  {
-    linkTitle: "Travel Packages",
-    link: "/user/travelpackages",
+    link: "/Destination",
   },
   {
     linkTitle: "Hotels",
-    link: "/user/hotels",
+    link: "/TopHotels",
+  },
+  {
+    linkTitle: "Travel Packages",
+    link: "/TopTravelPackage",
   },
 ];
 

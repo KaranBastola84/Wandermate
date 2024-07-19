@@ -14,7 +14,7 @@ function ImageSlider() {
     "Pokhara (Nepali: पोखरा), nestled in central Nepal, is celebrated for its breathtaking natural beauty and proximity to the majestic Annapurna mountain range. Set at an elevation of approximately 827 meters (2,713 feet), Pokhara offers stunning vistas of iconic peaks such as Annapurna, Machhapuchhre (Fishtail), and Dhaulagiri. The city's tranquil Phewa Lake reflects these towering mountains, creating postcard-perfect scenes for visitors enjoying boat rides or lakeside strolls. Beyond its natural allure, Pokhara serves as a bustling hub for trekkers embarking on adventures into the Annapurna region. "
   ];
   const [slideIndex, setSlideIndex] = useState(0);
-  const [expanded, setExpanded] = useState(false); // State to track if text is expanded
+  const [expanded, setExpanded] = useState(false); 
 
   const slideInterval = useRef(null);
 
