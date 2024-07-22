@@ -15,7 +15,7 @@ function Nav() {
             <Link to="/SignUpp">Sign In </Link>
               </ol>
             <ol>
-              <Link to="/Destination"> ARKO LOGIN  </Link>
+              <Link to="/Home"> ARKO LOGIN  </Link>
             </ol>
             
           </nav>

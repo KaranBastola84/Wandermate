@@ -49,7 +49,7 @@ if(error){
       <div className="topd">
         <div className="flex pl-14 pt-6">
         <img src={haha} className="w-12 h-12 rounded-full" />
-        <button className="pl-2 font-bold">Top Hotels</button>
+        <button className="pl-2 font-bold w-[150px]">Top Hotels</button>
         </div>
       </div>    
 
@@ -91,7 +91,7 @@ if(error){
       <div className="topd">
         <div className="flex pl-14 pt-6">
         <img src={haha} className="w-12 h-12 rounded-full" />
-        <button className="pl-2 font-bold">Top Travel Packages</button>
+        <button className="pl-2 font-bold w-[200px]">Top Travel Packages</button>
         </div>
       </div>    
 
