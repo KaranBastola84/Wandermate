@@ -36,7 +36,7 @@ function App() {
           <Route path="/ViewDeal/:id" element={<ViewDeal />} />
           <Route path="/ViewTravelDeal/:id" element={<ViewTravelDeal />} />
           <Route path="/TravelPackage" element={<TravelPackage />} />
-
+          <Route path="/Dashboard/*" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>

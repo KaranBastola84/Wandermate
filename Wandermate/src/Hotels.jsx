@@ -40,7 +40,7 @@ const UsHotels = () => {
         <div className=" pr-8 pl-8">
           <div className="p-6">
             <div className="grid grid-cols-2 gap-4">
-              {hotels.slice(0, 4).map((hotels) => (
+              {hotels.map((hotels) => (
                 <div
                   className=" relative"
                   key={hotels.id}
