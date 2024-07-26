@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const AddHotelForm = ({ onAddItem }) => {
+const AddHotelForm = ({ onAddItem, actualdata, index }) => {
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -12,6 +12,21 @@ const AddHotelForm = ({ onAddItem }) => {
     desc: "",
   });
 
+  useEffect(() => {
+    if (actualdata) {
+      setFormData({
+        id: actualdata.id,
+        name: actualdata.name,
+        price: actualdata.price,
+        img: actualdata.img,
+        rating: actualdata.rating,
+        freeCancellation: actualdata.freeCancellation,
+        reserveNow: actualdata.reserveNow,
+        desc: actualdata.desc,
+      });
+    }
+  }, [actualdata]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -22,15 +37,13 @@ const AddHotelForm = ({ onAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Generate a unique id if not provided
+
     const newHotel = {
       ...formData,
-      id: formData.id || Date.now().toString(), // Use current timestamp as unique id
+      id: formData.id || Date.now().toString(),
     };
-    onAddItem(newHotel);
-    
-    const savedHotels = JSON.parse(localStorage.getItem("hotels")) || [];
-    localStorage.setItem("hotels", JSON.stringify([...savedHotels, newHotel]));
+    console.log("Form submitted with:", newHotel);
+    onAddItem(newHotel, index);
     setFormData({
       id: "",
       name: "",
@@ -45,7 +58,6 @@ const AddHotelForm = ({ onAddItem }) => {
 
   return (
     <form onSubmit={handleSubmit} className="p-4 border border-gray-300 mt-4">
-      {/* Form fields */}
       <div className="mb-4">
         <label className="block mb-2">Name:</label>
         <input
@@ -116,7 +128,7 @@ const AddHotelForm = ({ onAddItem }) => {
         ></textarea>
       </div>
       <button type="submit" className="bg-blue-500 text-white px-4 py-2">
-        Add Hotel
+        {index !== null ? "Update " : "Add Hotel"}
       </button>
     </form>
   );

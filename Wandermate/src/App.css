@@ -55,7 +55,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to right, #afafaf 0%, #ffffff 100%);
+    background-image: linear-gradient(to right, #afafaf 1%, #ffffff 100%);
     transition: .5s ease;
     display: block;
     z-index: -1;

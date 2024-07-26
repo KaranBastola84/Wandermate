@@ -3,31 +3,56 @@ import AddHotelForm from "./AddHotelForm";
 
 const Hotels = () => {
   const [Hotels, setHotels] = useState([]);
-  const [ add, setAdd] = useState(false);
-  const [expandedDesc, setExpandedDesc] = useState(null); 
+  const [add, setAdd] = useState(false);
+  const [expandedDesc, setExpandedDesc] = useState(null);
+  const [editForm, setEditForm] = useState(false);
+  const [oneData, setOneDat] = useState();
+  const [editIndex, setEditIndex] = useState(null);
 
   useEffect(() => {
     const localHotels = JSON.parse(localStorage.getItem("hotels")) || [];
     setHotels(localHotels);
   }, []);
 
-  const handleAddItem = (newHotel) => {
-    const updatedHotels = [...Hotels, newHotel]; //
+  const handleAddItem = (newHotel, index) => {
+    console.log("handleAddItem called with:", newHotel, index);
+    let updatedHotels;
+    if (index !== null) {
+      updatedHotels = Hotels.map((hotel, i) => (i === index ? newHotel : hotel));
+    } else {
+      updatedHotels = [...Hotels, newHotel];
+    }
     setHotels(updatedHotels);
     localStorage.setItem("hotels", JSON.stringify(updatedHotels));
     setAdd(false);
+    setEditForm(false);
   };
 
   const truncateDescription = (desc, expanded) => {
     const words = desc.split(" ");
     if (expanded) {
-      return desc; // Return full description if expanded
+      return desc; 
     }
-    return words.slice(0, 20).join(" ") + (words.length > 20 ? "..." : ""); // Truncate description
+    return words.slice(0, 20).join(" ") + (words.length > 20 ? "..." : ""); 
   };
 
   const toggleExpandDesc = (id) => {
-    setExpandedDesc(expandedDesc === id ? null : id); // Toggle expanded description
+    setExpandedDesc(expandedDesc === id ? null : id); 
+  };
+
+  const handleEditForm = (index) => {
+    setEditForm(true);
+    setOneDat(Hotels[index]);
+    setEditIndex(index);
+  };
+
+  const handleDelete = (index) => {
+    const confirmed = window.confirm("Are you sure you want to delete this hotel?");
+    if (confirmed) {
+      const updatedHotels = Hotels.filter((_, i) => i !== index);
+      setHotels(updatedHotels);
+      localStorage.setItem("hotels", JSON.stringify(updatedHotels));
+    }
   };
 
   return (
@@ -47,7 +72,7 @@ const Hotels = () => {
             </tr>
           </thead>
           <tbody>
-            {Hotels.map((hotel) => (   ////////////////
+            {Hotels.map((hotel, index) => (
               <tr key={hotel.id}>
                 <td className="border border-gray-300 p-2 w-32 overflow-hidden text-ellipsis whitespace-nowrap">
                   <a href={hotel.img} target="_blank" rel="noopener noreferrer">
@@ -60,15 +85,22 @@ const Hotels = () => {
                 <td className="border border-gray-300 p-2 pl-6 pr-6 text-center">
                   ${hotel.price}
                 </td>
-                <td className="border border-gray-300 p-2">{hotel.rating} ⭐</td>
+                <td className="border border-gray-300 p-2">
+                  {hotel.rating} ⭐
+                </td>
                 <td className="border border-gray-300 p-2">
                   {hotel.freeCancellation ? "Yes" : "No"}
                 </td>
-                <td className="border border-gray-300 p-2">{hotel.reserveNow}</td>
+                <td className="border border-gray-300 p-2">
+                  {hotel.reserveNow}
+                </td>
                 <td className="border border-gray-300 p-2">
                   <div className="flex flex-col">
                     <p className="mb-2">
-                      {truncateDescription(hotel.desc, expandedDesc === hotel.id)}
+                      {truncateDescription(
+                        hotel.desc,
+                        expandedDesc === hotel.id
+                      )}
                     </p>
                     <button
                       onClick={() => toggleExpandDesc(hotel.id)}
@@ -79,17 +111,36 @@ const Hotels = () => {
                   </div>
                 </td>
                 <td className="border border-gray-300 p-2">
-                  <button className="bg-blue-500 mb-3">Edit</button>
-                  <button className="bg-red-500">Delete</button>
+                  <button
+                    onClick={() => handleEditForm(index)}
+                    className="bg-blue-500 mb-3"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(index)}
+                    className="bg-red-500"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        <button className="mt-6" onClick={() => setAdd(true)}>Add Item</button>
+        <button className="mt-6" onClick={() => setAdd(true)}>
+          Add Item
+        </button>
 
         {add && <AddHotelForm onAddItem={handleAddItem} />}
+        {editForm && (
+          <AddHotelForm
+            onAddItem={handleAddItem}
+            actualdata={oneData}
+            index={editIndex}
+          />
+        )}
       </div>
     </>
   );
